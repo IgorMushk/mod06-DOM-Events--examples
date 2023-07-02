@@ -183,17 +183,46 @@ const cars = [
 ];
 
 const containerEl = document.querySelector(".js-container");
-console.log(containerEl);
+//console.log(containerEl);
 //cars.forEach((car) => console.log(car));
-cars.forEach(({ id, model, type, price, img }) => {
-  const markup = `
-    <li> <img src="${img}" alt="${model}" class="img" />
+// - 1 -
+// cars.forEach(({ id, model, type, price, img }) => {
+//   const markup = `
+//     <li> <img src="${img}" alt="${model}" class="img" />
+//         <h2>Марка - ${model}</h2>
+//         <h3>Модель -${type}</h3>
+//         <p>Цена- ${price}</p>
+//     </li>
+//     `;
+//   containerEl.insertAdjacentHTML("afterbegin", markup);
+//   //console.dir(markup);
+// });
+
+// - 2 -
+const markup = cars
+  .map(
+    ({ id = "none", model, type, price, img }) => `
+    <li data-id="${id}">
+        <img src="${img}" alt="${model}" class="img" />
         <h2>Марка - ${model}</h2>
         <h3>Модель -${type}</h3>
         <p>Цена- ${price}</p>
     </li>
-    `;
-  containerEl.insertAdjacentHTML("afterbegin", markup);
-  console.dir(markup);
+    `
+  )
+  .join("");
+//console.dir(markup);
+containerEl.insertAdjacentHTML("afterbegin", markup);
+const containerElAfter = document.querySelector(".js-container");
+//console.log(containerElAfter);
+
+//[...containerElAfter.children].forEach((item) => console.log(item));
+//[...containerElAfter.children].forEach((item) => item.remove());
+//containerElAfter.innerHTML = "";
+
+//[...containerElAfter.children].forEach((item) => console.dir(item.dataset.id));
+[...containerElAfter.children].forEach((item) => {
+  if (item.dataset.id !== "none") {
+    item.remove();
+  }
 });
-console.dir(containerEl);
