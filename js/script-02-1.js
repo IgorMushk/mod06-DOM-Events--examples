@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=LvMpu9DDwOE&t=827s
+//
 // Если изначально делать текст обрезанный с ..., то генерим страницу на JS с изнчально обрезанным текстом
 // const arr = [
 //     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo autem deserunt incidunt pariatur sint assumenda id dolore quibusdam, quod at quos nisi culpa nesciunt mollitia libero magnam voluptatibus harum possimus architecto reprehenderit vero ad. Numquam consequatur perspiciatis magni sit omnis id accusantium, minus dolore eum! Nisi esse ipsam officiis ipsa.',
