@@ -29,6 +29,9 @@ function onCloseModal() {
 }
 
 function onBackdropClick(event) {
+  console.log(event.currentTarget);
+  console.log(event.target);
+  //
   if (event.currentTarget === event.target) {
     console.log("Кликнули именно в бекдроп!!!!");
     onCloseModal();
@@ -36,6 +39,8 @@ function onBackdropClick(event) {
 }
 
 function onEscKeyPress(event) {
+  console.log(event.code);
+  //
   const ESC_KEY_CODE = "Escape";
   const isEscKey = event.code === ESC_KEY_CODE;
 
